@@ -27,4 +27,9 @@ public class DemoController {
         List<String> scopes = DemoUtil.buildScopes(scope);
         return DemoUtil.buildScopes(scope);
     }
+    @PostMapping("/create")
+    public List<String> createMapPlatformPatent3(@RequestParam(value = "scope", required = false) String scope) {
+        List<String> scopes = DemoUtil.buildScopes(scope);
+        return DemoUtil.buildScopes(scope);
+    }
 }
