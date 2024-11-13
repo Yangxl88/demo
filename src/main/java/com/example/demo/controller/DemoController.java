@@ -22,18 +22,24 @@ public class DemoController {
         List<String> scopes = DemoUtil.buildScopes(scope);
         return DemoUtil.buildScopes(scope);
     }
-    @PostMapping("/create")
+    @PostMapping("/create2")
     public List<String> createMapPlatformPatent2(@RequestParam(value = "scope", required = false) String scope) {
         List<String> scopes = DemoUtil.buildScopes(scope);
         return DemoUtil.buildScopes(scope);
     }
-    @PostMapping("/create")
+    @PostMapping("/create3")
     public List<String> createMapPlatformPatent3(@RequestParam(value = "scope", required = false) String scope) {
         List<String> scopes = DemoUtil.buildScopes(scope);
         return DemoUtil.buildScopes(scope);
     }
-    @PostMapping("/create")
+    @PostMapping("/create4")
     public List<String> createMapPlatformPatent4(@RequestParam(value = "scope", required = false) String scope) {
+        List<String> scopes = DemoUtil.buildScopes(scope);
+        return DemoUtil.buildScopes(scope);
+    }
+
+    @PostMapping("/create5")
+    public List<String> createMapPlatformPatent5(@RequestParam(value = "scope", required = false) String scope) {
         List<String> scopes = DemoUtil.buildScopes(scope);
         return DemoUtil.buildScopes(scope);
     }
