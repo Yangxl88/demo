@@ -95,7 +95,8 @@ jobs:
     # 拉取Github Codeql编译结果到本地，使用vscode进行分析
     # 第一步，将codeql生成数据库相关文件夹打包，/home/runner/work/_temp/codeql_databases 一般情况下为通用路径，有相关保存请查看日志查看数据生成语句存放位置
     - name: Tar files
-      run: tar -cvf my_files.tar /home/runner/work/_temp/codeql_databases   
+      # run: tar -cvf my_files.tar /home/runner/work/_temp/codeql_databases
+      run: tar -cvf my_files.tar /home/runner/work/demo/results/java.sarif
     # 第二步，将生成的结果文件，推到Github中    
     - name: upload result
       uses: actions/upload-artifact@v3
