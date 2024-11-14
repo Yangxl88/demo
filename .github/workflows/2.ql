@@ -10,6 +10,7 @@
  */
 
 import java
+@precision("high")
 import semmle.code.java.dataflow.FlowSources
 import semmle.code.java.dataflow.TaintTracking
 import semmle.code.java.security.ExternalAPIs
