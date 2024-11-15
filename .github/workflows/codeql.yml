@@ -28,11 +28,12 @@ jobs:
     #   - https://gh.io/using-larger-runners (GitHub.com only)
     # Consider using larger runners or machines with greater resources for possible analysis time improvements.
     runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
-    permissions: write-all
+    permissions: 
+    
       
       # required for all workflows
-      # security-events: write
-
+      security-events: write
+      actions: low
       # required to fetch internal or private CodeQL packs
       # packages: read
 
@@ -42,6 +43,7 @@ jobs:
 
     strategy:
       fail-fast: false
+      
       matrix:
         include:
         - language: java-kotlin
@@ -92,6 +94,7 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
+      
       with:
         category: "/language:${{matrix.language}}"
 # 第一步，将codeql生成数据库相关文件夹打包，/home/runner/work/_temp/codeql_databases 一般情况下为通用路径，有相关保存请查看日志查看数据生成语句存放位置
