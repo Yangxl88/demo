@@ -72,6 +72,7 @@ jobs:
 
         # For more details on CodeQL's query packs, refer to: https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning#using-queries-in-ql-packs
         queries: security-extended,security-and-quality
+        precision: low
 
     # If the analyze step fails for one of the languages you are analyzing with
     # "We were unable to automatically build your code", modify the matrix above
@@ -91,8 +92,8 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
-      
       with:
+        precision: low
         category: "/language:${{matrix.language}}"
 # 第一步，将codeql生成数据库相关文件夹打包，/home/runner/work/_temp/codeql_databases 一般情况下为通用路径，有相关保存请查看日志查看数据生成语句存放位置
     - name: Tar files
