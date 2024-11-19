@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.utils.DemoUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/demo")
 @Validated
+@Slf4j
 public class DemoController {
 
     @PostMapping("/create")
@@ -43,6 +45,8 @@ public class DemoController {
         List<String> scopes = DemoUtil.buildScopes(scope);
         DemoUtil.checkPnIsPublication("SDFF");
         DemoUtil.dealApplyNumber("SDFF");
+        DemoUtil.createTempFile();
+        log.info("[initLocalCache][缓存敏感词，数量为:{}]", scopes);
         return DemoUtil.buildScopes(scope);
     }
 }

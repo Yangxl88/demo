@@ -1,8 +1,11 @@
 package com.example.demo.utils;
 
+import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.StrUtil;
+import lombok.SneakyThrows;
 import org.springframework.validation.annotation.Validated;
 
+import java.io.File;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -34,5 +37,14 @@ public class DemoUtil {
         } else {
             return applyNumber;
         }
+    }
+
+    @SneakyThrows
+    public static File createTempFile() {
+        // 创建文件，通过 UUID 保证唯一
+        File file = File.createTempFile(IdUtil.simpleUUID(), null);
+        // 标记 JVM 退出时，自动删除
+        file.deleteOnExit();
+        return file;
     }
 }
