@@ -3,7 +3,7 @@
  * @description Data provided remotely is used in this external API without sanitization, which could be a security risk.
  * @id java/untrusted-data-to-external-api
  * @kind path-problem
- * @precision low
+ * @precision high
  * @problem.severity error
  * @security-severity 7.8
  * @tags security external/cwe/cwe-20
