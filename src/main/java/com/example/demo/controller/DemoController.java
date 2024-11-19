@@ -41,7 +41,8 @@ public class DemoController {
     @PostMapping("/create5")
     public List<String> createMapPlatformPatent5(@RequestParam(value = "scope", required = false) String scope) {
         List<String> scopes = DemoUtil.buildScopes(scope);
-        int k = 0;
+        DemoUtil.checkPnIsPublication("SDFF");
+        DemoUtil.dealApplyNumber("SDFF");
         return DemoUtil.buildScopes(scope);
     }
 }
